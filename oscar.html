@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XV Años Oscar Omar - 28.02.2026</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=Raleway:wght@200;300;400;600;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Raleway', sans-serif;
+            background: #0a1628;
+            color: #fff;
+            overflow-x: hidden;
+        }
+        
+        /* HEADER SECTION */
+        .blessing-text {
+            font-family: 'Great Vibes', cursive; /* igual que .date-main */
+            font-size: 36px;                   /* igual que .date-main */
+            color: #c0c0c0;                    /* igual que .date-main */
+            letter-spacing: 3px;               /* igual que .date-main */
+            font-weight: 400;                  /* igual que .date-main */
+            margin-bottom: 20px;               /* para darle espacio debajo */
+        }
+
+        .header-section {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 20px;
+            text-align: center;
+            position: relative;
+        }
+        
+        /* MIS 15 AÑOS - SIMPLE ELEGANT */
+        .title-container {
+            margin-bottom: 25px;
+        }
+        
+        .main-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 56px;
+            color: #c0c0c0;
+            font-weight: 300;
+            letter-spacing: 8px;
+            text-transform: uppercase;
+        }
+        
+        /* PHOTO SECTION */
+        .photo-section {
+            margin: 20px 0 25px;
+        }
+        
+        .photo-frame {
+            width: 280px;
+            height: 280px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 4px solid rgba(192, 192, 192, 0.4);
+            box-shadow: 
+                0 0 40px rgba(192, 192, 192, 0.2),
+                0 20px 60px rgba(0, 0, 0, 0.5);
+            margin: 0 auto;
+            background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
+            position: relative;
+        }
+        
+        .photo-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .photo-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: rgba(255, 255, 255, 0.3);
+            font-size: 14px;
+            text-align: center;
+            padding: 40px;
+            font-family: 'Raleway', sans-serif;
+        }
+        
+        .photo-placeholder::before {
+            content: '📷';
+            font-size: 60px;
+            margin-bottom: 15px;
+        }
+        
+        .name-main {
+            font-family:  "Playfair Display", serif;
+            font-size: 64px;
+            color: #fff;
+            letter-spacing: 8px;
+            margin: 20px 0 15px;
+            font-weight: 300;
+        }
+        
+        .date-main {
+            font-family: 'Raleway', sans-serif;
+            font-size: 28px;
+            color: #c0c0c0;
+            letter-spacing: 4px;
+            font-weight: 300;
+        }
+        
+        /* COUNTDOWN SECTION */
+        .countdown-section {
+            padding: 40px 20px;
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .section-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 48px;
+            color: #c0c0c0;
+            text-align: center;
+            margin-bottom: 30px;
+            letter-spacing: 4px;
+            font-weight: 600;
+        }
+        
+        .countdown-grid {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+        
+        .countdown-box {
+            min-width: 100px;
+        }
+        
+        .countdown-number {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 72px;
+            color: #e8e8e8;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        
+        .countdown-label {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 18px;
+            color: #c0c0c0;
+            font-style: italic;
+            font-weight: 400;
+        }
+        
+        /* DETAILS SECTION */
+        .details-section {
+            padding: 20px 20px;
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .detail-item {
+            margin: 30px 0;
+        }
+        
+        .detail-icon {
+            font-size: 36px; color: #c0c0c0;
+            margin-bottom: 20px;
+        }
+        
+        .detail-label {
+            font-family: 'Raleway', sans-serif;
+            font-size: 14px;
+            color: #c0c0c0;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        
+        .detail-value {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 28px;
+            color: #fff;
+            line-height: 1.6;
+            font-weight: 400;
+        }
+        
+        .divider {
+            width: 100px;
+            height: 1px;
+            background: rgba(192, 192, 192, 0.3);
+            margin: 30px auto;
+        }
+        
+        /* MAP SECTION */
+        .map-section {
+            padding: 20px 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .map-container {
+            width: 100%;
+            height: 450px;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 2px solid rgba(192, 192, 192, 0.2);
+            margin: 30px 0; 
+        }
+        
+        #map {
+            width: 100%;
+            height: 100%;
+        }
+        
+        .map-buttons {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+        
+        .map-btn {
+            padding: 15px 35px;
+            background: transparent;
+            border: 2px solid #c0c0c0;
+            color: #c0c0c0;
+            font-family: 'Raleway', sans-serif;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            cursor: pointer;
+            border-radius: 30px;
+            transition: all 0.3s;
+            font-weight: 600;
+        }
+        
+        .map-btn:hover {
+            background: #c0c0c0;
+            color: #0a1628;
+        }
+        
+        /* CONFIRMATION SECTION */
+        .confirmation-section {
+            padding: 30px 20px 60px;
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .final-message {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 32px;
+            color: #c0c0c0;
+            font-style: italic;
+            margin-bottom: 90px;
+            line-height: 1.5;
+            font-weight: 400;
+        }
+        
+        .dress-code {
+            margin: 30px 0;
+            padding: 40px;
+            border: 2px solid rgba(192, 192, 192, 0.3);
+            border-radius: 20px;
+        }
+        
+        .dress-code-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 24px;
+            color: #c0c0c0;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        
+        .dress-code-text {
+            font-family: 'Raleway', sans-serif;
+            font-size: 20px;
+            color: #fff;
+            font-weight: 300;
+        }
+        
+        .confirmation-question {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 32px;
+            color: #c0c0c0;
+            margin-bottom: 30px;
+            font-weight: 400;
+        }
+        
+        .contact-info {
+            font-family: 'Raleway', sans-serif;
+            font-size: 18px;
+            color: #fff;
+            line-height: 1.8;
+            font-weight: 300;
+        }
+        
+        .phone-number {
+            font-size: 28px;
+            color: #c0c0c0;
+            font-weight: 400;
+            margin-top: 15px;
+            letter-spacing: 2px;
+        }
+        
+        .footer-text {
+            margin-top: 40px;
+            color: rgba(192, 192, 192, 0.5);
+            font-size: 14px;
+            font-family: 'Raleway', sans-serif;
+            letter-spacing: 2px;
+        }
+        
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .main-title {
+                font-size: 42px;
+                letter-spacing: 6px;
+            }
+            
+            .name-main {
+                font-size: 48px;
+                letter-spacing: 4px;
+            }
+            
+            .date-main {
+                font-size: 22px;
+            }
+            
+            .photo-frame {
+                width: 250px;
+                height: 250px;
+            }
+            
+            .countdown-number {
+                font-size: 56px;
+            }
+            
+            .countdown-grid {
+                gap: 10px;
+            }
+            
+            .countdown-box {
+                min-width: 70px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .main-title {
+                font-size: 32px;
+                letter-spacing: 4px;
+            }
+            
+            .name-main {
+                font-size: 36px;
+            }
+            
+            .photo-frame {
+                width: 220px;
+                height: 220px;
+            }
+            
+            .phone-number {
+                font-size: 22px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- FRASE -->
+    <div class="header-section">
+    <div class="blessing-text">
+        Por la bendición de Dios en mi vida y el amor de mi familia ha llegado el momento de celebrar el inicio de esta nueva etapa...
+    </div>
+
+    <!-- HEADER -->
+    <section class="header-section">
+        <div class="title-container">
+            <div class="main-title">Mis XV Años</div>
+        </div>
+        
+        <div class="photo-section">
+            <div class="photo-frame">
+                <img src="imagenes/dos.JPEG" alt="Oscar Omar">
+            </div>
+        </div>
+        
+        <div class="name-main">OSCAR OMAR</div>
+        <div class="date-main">28 . 02 . 2026</div>
+    </section>
+    
+    <!-- COUNTDOWN -->
+    <section class="countdown-section">
+        <div class="section-title">Cuenta Regresiva</div>
+        <div class="countdown-grid">
+            <div class="countdown-box">
+                <div class="countdown-number" id="days">00</div>
+                <div class="countdown-label">Días</div>
+            </div>
+            <div class="countdown-box">
+                <div class="countdown-number" id="hours">00</div>
+                <div class="countdown-label">Horas</div>
+            </div>
+            <div class="countdown-box">
+                <div class="countdown-number" id="minutes">00</div>
+                <div class="countdown-label">Minutos</div>
+            </div>
+            <div class="countdown-box">
+                <div class="countdown-number" id="seconds">00</div>
+                <div class="countdown-label">Segundos</div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- DETAILS -->
+    <section class="details-section">
+        <div class="section-title">Información</div>
+        
+        <div class="detail-item">
+            <div class="detail-icon">◆</div>
+            <div class="detail-label">Fecha</div>
+            <div class="detail-value">Sábado 28 de Febrero, 2026</div>
+        </div>
+        
+        <div class="divider"></div>
+        
+        <div class="detail-item">
+            <div class="detail-icon">◆</div>
+            <div class="detail-label">Hora</div>
+            <div class="detail-value">19:00 Horas</div>
+        </div>
+        
+        <div class="divider"></div>
+        
+        <div class="detail-item">
+            <div class="detail-icon">◆</div>
+            <div class="detail-label">Lugar</div>
+            <div class="detail-value">
+                <strong>Salón: ANFITRITE</strong><br>
+                Fernando Alencastre 310, Bosque de Chapultepec II Secc, Miguel Hidalgo, 11000 Ciudad de México, CDMX
+            </div>
+        <div class="map-container">
+            <div id="map"></div>
+        </div>
+        <div class="map-buttons">
+            <button class="map-btn" onclick="openGoogleMaps()">Abrir en Google Maps</button>
+            <button class="map-btn" onclick="openWaze()">Abrir en Waze</button>
+        </div>
+    </section>
+    
+    <!-- CONFIRMATION -->
+    <section class="confirmation-section">
+        <div class="final-message">
+            "Tu presencia es el mejor regalo que puedo recibir en este día tan especial."
+        </div>
+        
+        <div class="dress-code">
+            <div class="dress-code-title">Código de Vestimenta</div>
+            <div class="dress-code-text">Casual / Formal</div>
+        </div>
+        
+        <div style="margin-top: 40px;"> 
+            <div class="contact-info">
+                Confirmar asistencia al número:
+            </div>
+            <div class="phone-number">
+                +52 55 4964 3062
+            </div>
+        </div>
+        
+        <div class="footer-text">
+            #OscarXV #28Febrero2026
+        </div>
+    </section>
+    
+    <script>
+        // COUNTDOWN
+        const eventDate = new Date('2026-02-28T19:00:00').getTime();
+        
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const distance = eventDate - now;
+            
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            
+            document.getElementById('days').textContent = String(days).padStart(2, '0');
+            document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+            document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+            document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+            
+            if (distance < 0) {
+                document.querySelector('.countdown-grid').innerHTML = '<div style="color: #c0c0c0; font-size: 32px; font-family: \'Cormorant Garamond\', serif;">¡Es Hoy!</div>';
+            }
+        }
+        
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+        
+        // MAP
+        const eventLocation = {
+            lat: 19.42133288148114,  // CAMBIA ESTAS COORDENADAS
+            lng: -99.19988074232901  // A LA UBICACIÓN REAL DEL EVENTO
+        };
+        
+        function initMap() {
+            const mapFrame = document.createElement('iframe');
+            mapFrame.style.width = '100%';
+            mapFrame.style.height = '100%';
+            mapFrame.style.border = '0';
+            mapFrame.loading = 'lazy';
+            mapFrame.src = `https://maps.google.com/maps?q=${eventLocation.lat},${eventLocation.lng}&z=15&output=embed`;
+            
+            document.getElementById('map').appendChild(mapFrame);
+        }
+        
+        function openGoogleMaps() {
+            window.open(`https://maps.app.goo.gl/pdwr3CdfeYzQsQWU9`, '_blank');
+        }
+        
+        function openWaze() { 
+            window.open(`https://www.waze.com/ul?ll=${eventLocation.lat},${eventLocation.lng}&navigate=yes`, '_blank');
+        }
+
+        
+        
+        window.addEventListener('load', initMap);
+    </script>
+</body>
+</html>
