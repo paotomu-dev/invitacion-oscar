@@ -179,13 +179,40 @@
             margin-bottom: 15px;
         }
         
-        .family-names .section-title:last-of-type {
-            margin-top: 60px;
-        }
-        
         .family-names .detail-value {
             margin-bottom: 20px;
             font-style: italic;
+        }
+        
+        .family-divider {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 50px auto;
+            max-width: 300px;
+        }
+        
+        .family-divider::before,
+        .family-divider::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: rgba(192, 192, 192, 0.3);
+        }
+        
+        .family-divider::before {
+            margin-right: 15px;
+        }
+        
+        .family-divider::after {
+            margin-left: 15px;
+        }
+        
+        .divider-dot {
+            width: 4px;
+            height: 4px;
+            background: rgba(192, 192, 192, 0.5);
+            border-radius: 50%;
         }
         
         /* DETAILS SECTION */
@@ -483,6 +510,11 @@
         <div class="detail-value">Olivia Muñoz Barroso</div>
         <div class="detail-value">&</div>
         <div class="detail-value">Oscar Omar Tovar Guzmán</div>
+        
+        <div class="family-divider">
+            <div class="divider-dot"></div>
+        </div>
+        
         <div class="section-title">Mis padrinos</div> 
         <div class="detail-value">Paola Yaretzi Tovar Muñoz</div>
         <div class="detail-value">Cecilia Tovar Guzmán</div>
@@ -607,7 +639,3 @@
     </script>
 </body>
 </html>
-
-
-
-
