@@ -306,6 +306,58 @@
             color: #0a1628;
         }
         
+        /* PHOTOS SECTION */
+        .photos-section {
+            padding: 60px 20px;
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .photos-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 24px;
+            color: #c0c0c0;
+            line-height: 1.6;
+            margin-bottom: 40px;
+            font-weight: 400;
+        }
+        
+        .qr-container {
+            margin: 40px auto;
+            max-width: 250px;
+        }
+        
+        .qr-container img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            border: 2px solid rgba(192, 192, 192, 0.2);
+        }
+        
+        .photos-btn {
+            display: inline-block;
+            padding: 15px 40px;
+            background: transparent;
+            border: 2px solid #c0c0c0;
+            color: #c0c0c0;
+            font-family: 'Raleway', sans-serif;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            cursor: pointer;
+            border-radius: 30px;
+            transition: all 0.3s;
+            font-weight: 600;
+            text-decoration: none;
+            margin-top: 30px;
+        }
+        
+        .photos-btn:hover {
+            background: #c0c0c0;
+            color: #0a1628;
+        }
+        
         /* CONFIRMATION SECTION */
         .confirmation-section {
             padding: 30px 20px 60px;
@@ -557,6 +609,24 @@
         </div>
     </section>
     
+    <!-- PHOTOS SECTION -->
+    <section class="photos-section">
+        <div class="photos-title">
+            Agrega las fotos y comparte tus mejores momentos de este recuerdo único
+        </div>
+        
+        <div class="qr-container">
+            <!-- AQUÍ VA TU IMAGEN DEL QR -->
+            <!-- Coloca tu imagen así: <img src="imagenes/qr-code.png" alt="QR Code"> -->
+            <!-- O si la tienes en otra carpeta: <img src="ruta/a/tu/qr.png" alt="QR Code"> -->
+            <img src="imagenes/qr.jpeg" alt="Código QR para subir fotos">
+        </div>
+        
+        <a href="TU_LINK_AQUI" class="photos-btn" target="_blank">
+            Subir Fotos 
+        </a>
+    </section>
+    
     <!-- CONFIRMATION -->
     <section class="confirmation-section">
         <div class="final-message">
@@ -639,3 +709,4 @@
     </script>
 </body>
 </html>
+
