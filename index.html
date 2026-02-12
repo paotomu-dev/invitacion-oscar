@@ -641,8 +641,8 @@
         <div class="detail-item">
             <div class="detail-label">Lugar</div>
             <div class="detail-value">
-                <strong>Iglesia de Nuestra Señora del Socorro</strong><br>
-                Prado Sur 340, Lomas - Virreyes, Lomas de Chapultepec IV Secc, Miguel Hidalgo, 11000 Ciudad de México, CDMX
+                <strong>Iglesia: NOMBRE DE LA IGLESIA</strong><br>
+                Dirección completa de la iglesia aquí
             </div>
         </div>
         
@@ -770,8 +770,8 @@
         
         // MAPA DE LA MISA
         const misaLocation = {
-            lat: 19.4000,  // CAMBIA ESTAS COORDENADAS A LA UBICACIÓN DE LA IGLESIA
-            lng: -99.2000
+            lat: 19.4000,  // PON AQUÍ LA LATITUD DE LA IGLESIA PARA WAZE
+            lng: -99.2000  // PON AQUÍ LA LONGITUD DE LA IGLESIA PARA WAZE
         };
         
         // MAPA DE LA FIESTA
@@ -787,7 +787,7 @@
             mapFrameMisa.style.height = '100%';
             mapFrameMisa.style.border = '0';
             mapFrameMisa.loading = 'lazy';
-            mapFrameMisa.src = `https://maps.app.goo.gl/Lhi9fcQRTQHWY4oo6`;
+            mapFrameMisa.src = `https://maps.google.com/maps?q=${misaLocation.lat},${misaLocation.lng}&z=15&output=embed`;
             
             const mapMisaElement = document.getElementById('map-misa');
             if (mapMisaElement) {
@@ -810,7 +810,7 @@
         
         // Funciones para la Misa
         function openGoogleMapsMisa() {
-            window.open(`https://www.google.com/maps?q=${misaLocation.lat},${misaLocation.lng}`, '_blank');
+            window.open(`https://maps.app.goo.gl/Lhi9fcQRTQHWY4oo6`, '_blank');
         }
         
         function openWazeMisa() { 
