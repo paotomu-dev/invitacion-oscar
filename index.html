@@ -627,27 +627,60 @@
         
         <div class="divider"></div>
         
+        <!-- MISA -->
         <div class="detail-item">
             <div class="detail-icon">◆</div>
+            <div class="detail-label">Misa</div>
+        </div>
+        
+        <div class="detail-item">
             <div class="detail-label">Hora</div>
-            <div class="detail-value">19:00 Horas</div>
+            <div class="detail-value">18:00 Horas</div>
+        </div>
+        
+        <div class="detail-item">
+            <div class="detail-label">Lugar</div>
+            <div class="detail-value">
+                <strong>Iglesia de Nuestra Señora del Socorro</strong><br>
+                Prado Sur 340, Lomas - Virreyes, Lomas de Chapultepec IV Secc, Miguel Hidalgo, 11000 Ciudad de México, CDMX
+            </div>
+        </div>
+        
+        <div class="map-container">
+            <div id="map-misa"></div>
+        </div>
+        <div class="map-buttons">
+            <button class="map-btn" onclick="openGoogleMapsMisa()">Abrir en Google Maps</button>
+            <button class="map-btn" onclick="openWazeMisa()">Abrir en Waze</button>
         </div>
         
         <div class="divider"></div>
         
+        <!-- FIESTA -->
         <div class="detail-item">
             <div class="detail-icon">◆</div>
+            <div class="detail-label">Fiesta</div>
+        </div>
+        
+        <div class="detail-item">
+            <div class="detail-label">Hora</div>
+            <div class="detail-value">19:00 Horas</div>
+        </div>
+        
+        <div class="detail-item">
             <div class="detail-label">Lugar</div>
             <div class="detail-value">
                 <strong>Salón: ANFITRITE</strong><br>
                 Fernando Alencastre 310, Bosque de Chapultepec II Secc, Miguel Hidalgo, 11000 Ciudad de México, CDMX
             </div>
+        </div>
+        
         <div class="map-container">
-            <div id="map"></div>
+            <div id="map-fiesta"></div>
         </div>
         <div class="map-buttons">
-            <button class="map-btn" onclick="openGoogleMaps()">Abrir en Google Maps</button>
-            <button class="map-btn" onclick="openWaze()">Abrir en Waze</button>
+            <button class="map-btn" onclick="openGoogleMapsFiesta()">Abrir en Google Maps</button>
+            <button class="map-btn" onclick="openWazeFiesta()">Abrir en Waze</button>
         </div>
     </section>
     
@@ -735,29 +768,62 @@
         setInterval(updateCountdown, 1000);
         updateCountdown();
         
-        // MAP
-        const eventLocation = {
-            lat: 19.42133288148114,  // CAMBIA ESTAS COORDENADAS
-            lng: -99.19988074232901  // A LA UBICACIÓN REAL DEL EVENTO
+        // MAPA DE LA MISA
+        const misaLocation = {
+            lat: 19.4000,  // CAMBIA ESTAS COORDENADAS A LA UBICACIÓN DE LA IGLESIA
+            lng: -99.2000
+        };
+        
+        // MAPA DE LA FIESTA
+        const fiestaLocation = {
+            lat: 19.42133288148114,  // Coordenadas del salón ANFITRITE
+            lng: -99.19988074232901
         };
         
         function initMap() {
-            const mapFrame = document.createElement('iframe');
-            mapFrame.style.width = '100%';
-            mapFrame.style.height = '100%';
-            mapFrame.style.border = '0';
-            mapFrame.loading = 'lazy';
-            mapFrame.src = `https://maps.google.com/maps?q=${eventLocation.lat},${eventLocation.lng}&z=15&output=embed`;
+            // Mapa de la Misa
+            const mapFrameMisa = document.createElement('iframe');
+            mapFrameMisa.style.width = '100%';
+            mapFrameMisa.style.height = '100%';
+            mapFrameMisa.style.border = '0';
+            mapFrameMisa.loading = 'lazy';
+            mapFrameMisa.src = `https://maps.app.goo.gl/Lhi9fcQRTQHWY4oo6`;
             
-            document.getElementById('map').appendChild(mapFrame);
+            const mapMisaElement = document.getElementById('map-misa');
+            if (mapMisaElement) {
+                mapMisaElement.appendChild(mapFrameMisa);
+            }
+            
+            // Mapa de la Fiesta
+            const mapFrameFiesta = document.createElement('iframe');
+            mapFrameFiesta.style.width = '100%';
+            mapFrameFiesta.style.height = '100%';
+            mapFrameFiesta.style.border = '0';
+            mapFrameFiesta.loading = 'lazy';
+            mapFrameFiesta.src = `https://maps.google.com/maps?q=${fiestaLocation.lat},${fiestaLocation.lng}&z=15&output=embed`;
+            
+            const mapFiestaElement = document.getElementById('map-fiesta');
+            if (mapFiestaElement) {
+                mapFiestaElement.appendChild(mapFrameFiesta);
+            }
         }
         
-        function openGoogleMaps() {
+        // Funciones para la Misa
+        function openGoogleMapsMisa() {
+            window.open(`https://www.google.com/maps?q=${misaLocation.lat},${misaLocation.lng}`, '_blank');
+        }
+        
+        function openWazeMisa() { 
+            window.open(`https://www.waze.com/ul?ll=${misaLocation.lat},${misaLocation.lng}&navigate=yes`, '_blank');
+        }
+        
+        // Funciones para la Fiesta
+        function openGoogleMapsFiesta() {
             window.open(`https://maps.app.goo.gl/pdwr3CdfeYzQsQWU9`, '_blank');
         }
         
-        function openWaze() { 
-            window.open(`https://www.waze.com/ul?ll=${eventLocation.lat},${eventLocation.lng}&navigate=yes`, '_blank');
+        function openWazeFiesta() { 
+            window.open(`https://www.waze.com/ul?ll=${fiestaLocation.lat},${fiestaLocation.lng}&navigate=yes`, '_blank');
         }
 
         
@@ -766,5 +832,3 @@
     </script>
 </body>
 </html>
-
-
